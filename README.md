@@ -32,12 +32,12 @@ The person with best test coverage will win a small present from the instructor 
 
 * [x] Each event can have multiple types of tickets, each with a different `price` and `max_quantity`.
 * [X] Users can buy tickets to an event, choose the types of tickets, and the quantity of tickets.
-* [ ] Users cannot buy more tickets than the quantity available.
-* [ ] Users can only buy up to 10 of a ticket type at a time. Show a nice flash message.
+* [X] Users cannot buy more tickets than the quantity available.
+* [X] Users can only buy up to 10 of a ticket type at a time. Show a nice flash message.
 
 #### Users
 
-* [X ] User can sign up by providing their email, password, and name.
+* [X] User can sign up by providing their email, password, and name.
 * [X] User can login using an email and password.
 * [X] Users can create events.
 * [X] Users must click "publish event" before an event becomes viewable to other users.

@@ -3,7 +3,7 @@
     <div class="col-md-10 center">
       <%= simple_form_for [@event, @ticket_type] do |f| %>
         <%= f.input :name %>
-        <%= f.input :price, as: :integer %>
+        <%= f.input :price, in: 10.0..1000.0, class: "form-control" %>
         <%= f.input :max_quantity, as: :integer %>
         <%= f.button :submit, class: "btn btn-primary", label: "Create" %>
         <% end %>

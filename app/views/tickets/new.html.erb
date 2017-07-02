@@ -37,7 +37,7 @@
             <%= f.price %>
             </td>
             <td>
-            <%= number_field(:quantity, in: 1..10) %>
+            <%= select_tag("quantity", options_for_select(0..10)) %>
             </td>
           </tr>
         <% end %>
