@@ -1,0 +1,30 @@
+<h1>yo</h1>
+
+<% if current_user %>
+  <h1>Edit event</h1>
+  <div class='users-header'>
+    <div class="container">
+      <%= simple_form_for @event, class: 'form-control'  do |f| %>
+          <% if @event.errors.size > 0 %>
+            <div class="alert alert-danger">
+              <%= @event.errors.full_messages.to_sentence %>
+            </div>
+          <% end %>
+          <div class="control-group col-md-6">
+            <div class="control">
+              <%= f.input :name %>
+              <%= f.input :starts_at, as: :date, html5: true %>
+              <%= f.input :ends_at, as: :date, html5: true %>
+              <%= f.input :extended_html_description, label: 'Description' %>
+              <%= f.input :hero_image_url %>
+              <%= f.input :category_id, default: Hash[Category.first.name, Category.first.id], collection: get_hash_category, label: 'Category' %>
+              <%= f.input :venue_id, default: Hash[Venue.first.name, Venue.first.id], collection: get_hash_venue, label: 'Venue'%>
+              <%= f.submit 'Submit Edits', class: 'btn btn-primary' %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <% flash.keep[:notice] = "You must be logged in to edit an event!" %>
+<% end %>

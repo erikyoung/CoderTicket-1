@@ -26,7 +26,10 @@
                 <%= link_to "Log Out", destroy_user_session_path, class: 'nav-link', method: :delete %>
               </li>
               <li class="nav-item">
-                <%= link_to "New Event", new_event_path, class: 'nav-link' %>
+                <%= link_to "New Event", new_event_path, class: 'nav-link', method: :get %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "User Events", users_path, class: 'nav-link', method: :get %>
               </li>
             </li>
             <% end %>
@@ -35,12 +38,7 @@
       
   </nav>  
 
-  <% if notice.present? %>
-  <p class="alert alert-info"><%= notice %></p>
-<% end %>
-<% if alert.present? %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+  <%= flash_messages %>
 
 <%= yield %>
 

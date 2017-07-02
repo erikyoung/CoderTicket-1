@@ -24,9 +24,9 @@ The person with best test coverage will win a small present from the instructor 
         * Implement `/upcoming` route test to go to 'events#index'
         * Implement `Event.upcoming` class method (with a test)
         * Implement `EventsController#index` action test
-* [ ] Users can search for events from the homepage.
-* [ ] Users can click on an event to see details about the event.
-* [ ] Users can click on "Book Now" to go to a page to purchase tickets.
+* [X] Users can search for events from the homepage.
+* [X] Users can click on an event to see details about the event.
+* [X] Users can click on "Book Now" to go to a page to purchase tickets.
 
 #### Tickets
 
@@ -39,7 +39,7 @@ The person with best test coverage will win a small present from the instructor 
 
 * [X ] User can sign up by providing their email, password, and name.
 * [X] User can login using an email and password.
-* [ ] Users can create events.
+* [X] Users can create events.
 * [ ] Users must click "publish event" before an event becomes viewable to other users.
     * **HINT**: use `published_at:datetime` and `Event.published` scope (class method)
     * Suggestions:
@@ -47,13 +47,13 @@ The person with best test coverage will win a small present from the instructor 
         * Write a test to make sure only an event creator can publish an event
 * [ ] Users can create ticket types for that event.
     * **HINT**: make sure you understand what a ticket tpe is. Ask if not clear.
-* [ ] Users can create venues.
+* [X] Users can create venues.
 * [ ] An event must have at least one `ticket_type` defined before it can be published.
     * **HINT**: add `Event#have_enough_ticket_types?` (and test it)
 * [ ] User can see a list of events he or she has created.
     * Suggestions
         * You can use `/events/mine` [collection routes](http://guides.rubyonrails.org/routing.html#adding-more-restful-actions)
-* [ ] Users can edit their event after creation. But only the user who created the event can edit the event.
+* [X] Users can edit their event after creation. But only the user who created the event can edit the event.
     * **HINT**: use a `before_action :check_event_changing_permission` to redirect users to event page with a flash error if applicable.
 
 ### Optional Stories

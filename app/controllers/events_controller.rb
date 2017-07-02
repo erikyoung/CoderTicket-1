@@ -12,11 +12,34 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+
   def create
     @event = Event.new event_params
+
     if @event.save
       flash[:success] = "New event created!"
       redirect_to root_path
+    else
+      render 'new'
+    end
+  end
+
+  def edit
+    @event = Event.find_by(id: params[:id])
+    if @event.save
+     flash[:success] = "Information Updated"
+   else 
+    flash[:error] = "Couldn't save"
+  end
+end
+
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update_attributes(event_params)
+      @event.save
+      flash[:success] = "Information Saved"
+      redirect_to event_path
     else
       render 'new'
     end

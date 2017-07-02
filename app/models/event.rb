@@ -10,4 +10,6 @@ end
 
 def self.upcoming
     Event.where('starts_at > ?', Time.now)
-  end
+ end
+
+ 
