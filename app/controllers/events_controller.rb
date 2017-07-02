@@ -4,7 +4,7 @@ class EventsController < ApplicationController
     if params[:search]
       @events = Event.where('name ILIKE ?', "%#{params[:search]}%")
     else
-      @events = Event.all
+      @events = Event.where(publish: true )
     end
   end
 
@@ -50,6 +50,14 @@ end
     @event.update_attributes(:publish => true)
     redirect_to events_path, notice: 'Event is published.'
   end
+
+  def unpublish
+    @event = Event.find(params[:id])
+    @event.update_attributes(:publish => false)
+    redirect_to events_path, notice: 'Event was unpublished!'
+  end
+
+  
 
   def show
     @event = Event.find(params[:id])

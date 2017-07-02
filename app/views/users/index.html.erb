@@ -5,10 +5,11 @@
 
 
 <% current_user.events.each do |event| %>
+	<h1><%= event.user.name %></h1>
 	<h1><%= event.name %></h1>
 	<h2><%= event.starts_at.strftime('%A, %d %b %Y %l:%M %p') %>
 	<h2><%= event.ends_at %>
-	<p><%= event.hero_image_url  %>
+	<p><%= event.hero_image_url %>
 	<p><%= event.category.name %>
 	<p><%= event.venue.name %>	
 	<p><%= event.venue.full_address %>
@@ -16,10 +17,5 @@
 	<p><%= event.publish %>
 
 <% end %>
-
-
-
-<%= link_to 'Publish Event', edit_user_path(@users), class: 'btn btn-primary' %>
-
              
 </div>
