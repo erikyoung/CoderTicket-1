@@ -24,12 +24,16 @@
 
         <% end %>
         <br />
+        <% if current_user %>
+
         <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn-primary' %>
         
         <%= link_to 'Publish Event', publish_event_path, method: :post, class: 'btn btn-success' %><br />
         <br />
 
         <%= link_to 'Unpublish Event', unpublish_event_path, method: :post, class: 'btn btn-warning' %>
+        <% end %>
+
          
       </div>
     </div>

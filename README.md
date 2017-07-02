@@ -18,7 +18,7 @@ The person with best test coverage will win a small present from the instructor 
 
 #### Events
 
-* [ ] Users can see a list of upcoming events. Past events should not be shown.
+* [X] Users can see a list of upcoming events. Past events should not be shown.
     * **HINT**: Good candidate for a test. You can write test first --> fail --> fast similar to demo
     * Suggestions:
         * Implement `/upcoming` route test to go to 'events#index'
@@ -45,10 +45,10 @@ The person with best test coverage will win a small present from the instructor 
     * Suggestions:
         * See [Add More RESTful Actions](http://guides.rubyonrails.org/routing.html#adding-more-restful-actions) to add a `publish` POST action (member type)
         * Write a test to make sure only an event creator can publish an event
-* [ ] Users can create ticket types for that event.
+* [X] Users can create ticket types for that event.
     * **HINT**: make sure you understand what a ticket tpe is. Ask if not clear.
 * [X] Users can create venues.
-* [ ] An event must have at least one `ticket_type` defined before it can be published.
+* [X] An event must have at least one `ticket_type` defined before it can be published.
     * **HINT**: add `Event#have_enough_ticket_types?` (and test it)
 * [X] User can see a list of events he or she has created.
     * Suggestions
