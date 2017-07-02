@@ -45,6 +45,12 @@ end
     end
   end
 
+  def publish
+    @event = Event.find(params[:id])
+    @event.update_attributes(:publish => true)
+    redirect_to events_path, notice: 'Event is published.'
+  end
+
   def show
     @event = Event.find(params[:id])
   end
