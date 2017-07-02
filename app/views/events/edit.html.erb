@@ -18,7 +18,7 @@
               <%= f.input :hero_image_url %>
               <%= f.input :category_id, default: Hash[Category.first.name, Category.first.id], collection: get_hash_category, label: 'Category' %>
               <%= f.input :venue_id, default: Hash[Venue.first.name, Venue.first.id], collection: get_hash_venue, label: 'Venue'%>
-              <%= f.input :ticket_types %>
+             
               <%= f.submit 'Submit Edits', class: 'btn btn-primary' %>
 
             </div>
@@ -29,3 +29,5 @@
 <% else %>
   <% flash.keep[:notice] = "You must be logged in to edit an event!" %>
 <% end %>
+
+<%= render 'tickets/new_ticket_type' %>

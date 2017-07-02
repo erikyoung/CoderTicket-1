@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 center">
+      <%= simple_form_for [@event, @ticket_type] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :price, as: :integer %>
+        <%= f.input :max_quantity, as: :integer %>
+        <%= f.button :submit, class: "btn btn-primary", label: "Create" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

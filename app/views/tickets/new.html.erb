@@ -28,13 +28,19 @@
         <th> Unit Price </th>
         <th> Quantity </th>
       
-        <% @event.ticket_types.each do |type| %>
-        <tr>
-          <td> <%= select_tag('type', options_for_select("<option>Normal</option><option>Better</option><option>Friggin Sweet</option>".html_safe)) %> </td>
-          <td> <%= number_to_currency(type.price, unit: 'VND ', precision: 0) %> </td>
-          <td> <%= select_tag('quantity', options_for_select(0..10)) %></td> 
-        </tr>
-        <% end %> 
+        <% @event.ticket_types.each do |f| %>
+          <tr>
+            <td>
+            <%= f.name %>
+            </td>
+            <td>
+            <%= f.price %>
+            </td>
+            <td>
+            <%= number_field(:quantity, in: 1..10) %>
+            </td>
+          </tr>
+        <% end %>
       </table>
     </div>
   </div>

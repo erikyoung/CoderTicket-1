@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
+  get 'ticket_types/new'
+
+  get 'ticket_types/show'
+
+  get 'ticket_types/edit'
+
+  get 'ticket_types/create'
+
   devise_for :users
   root 'events#index'
   resources :users
   resources :events do
     resources :tickets
+    resources :ticket_types     
     post 'publish', on: :member
     post 'unpublish', on: :member
-    
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

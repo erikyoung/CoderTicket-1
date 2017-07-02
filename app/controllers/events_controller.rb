@@ -26,12 +26,13 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find_by(id: params[:id])
+    @ticket_type = TicketType.new(event: @event)
     if @event.save
      flash[:success] = "Information Updated"
-   else 
+    else 
     flash[:error] = "Couldn't save"
+    end
   end
-end
 
 
   def update

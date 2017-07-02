@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702071205) do
+ActiveRecord::Schema.define(version: 20170702101348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 20170702071205) do
     t.string   "address"
     t.string   "phone"
     t.integer  "count"
+    t.integer  "event_id"
+    t.index ["event_id"], name: "index_tickets_on_event_id", using: :btree
     t.index ["ticket_type_id"], name: "index_tickets_on_ticket_type_id", using: :btree
   end
 
@@ -96,6 +98,7 @@ ActiveRecord::Schema.define(version: 20170702071205) do
   add_foreign_key "events", "categories"
   add_foreign_key "events", "venues"
   add_foreign_key "ticket_types", "events"
+  add_foreign_key "tickets", "events"
   add_foreign_key "tickets", "ticket_types"
   add_foreign_key "venues", "regions"
 end
