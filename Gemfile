@@ -51,6 +51,7 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem 'simplecov', '~> 0.12.0', require: false
   gem 'guard-rspec', require: false
+  gem 'rails-controller-testing'
 end
 
 group :development do
